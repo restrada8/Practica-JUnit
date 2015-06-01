@@ -46,5 +46,9 @@ public class Prueba {
 			fail("Se esperaba que se lanzara una excepcion del tipo BinaryStringException");
 		} catch (BinaryStringException e) {}
 	}
-
+	
+	@Test(expected = BinaryStringException.class)
+	public void testInvalidBitValue() {
+		prueba4.set(2, '3');
+	}
 }

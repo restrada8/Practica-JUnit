@@ -29,7 +29,14 @@ public class BinaryString {
 	
 	public void set(int index, char value) {
 		try {
-			bits[index] = value;
+			if(value == '0' || value == '1')
+			{
+				bits[index] = value;
+			}
+			else
+			{
+				throw new BinaryStringException();
+			}
 		} catch (RuntimeException e) {
 			throw new BinaryStringException();
 		}
