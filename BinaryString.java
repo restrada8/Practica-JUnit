@@ -32,7 +32,11 @@ public class BinaryString {
 	}
 	
 	public char get(int index) {
-		return bits[index];
+		try {
+			return bits[index];
+		} catch (RuntimeException e) {
+			throw new BinaryStringException();
+		}
 	}
 	
 	public String toString() {
