@@ -6,8 +6,8 @@ import org.junit.Test;
 
 public class Prueba {
 	private static final int N = 5;
-	private BinaryString prueba1, prueba2, prueba3, prueba4;
-	private String pruebas2 = "10110", pruebas3 = "100101", pruebas4 = "0110101";
+	private BinaryString prueba1, prueba2, prueba3, prueba4, prueba5;
+	private String pruebas2 = "10110", pruebas3 = "100101", pruebas4 = "0110101", pruebas5 = "1111000";
 	
 	@Before
 	public void iniciar() {
@@ -15,6 +15,7 @@ public class Prueba {
 		prueba2 = new BinaryString(pruebas2);
 		prueba3 = new BinaryString(pruebas3);
 		prueba4 = new BinaryString(pruebas4);
+		prueba5 = new BinaryString(pruebas5);
 	}
 	
 	@Test
@@ -50,5 +51,10 @@ public class Prueba {
 	@Test(expected = BinaryStringException.class)
 	public void testInvalidBitValue() {
 		prueba4.set(2, '3');
+	}
+	
+	@Test
+	public void testToString() {
+		assertEquals(" 1111000", prueba5.toString());
 	}
 }
